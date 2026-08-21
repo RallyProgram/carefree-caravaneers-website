@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carefree Caravaneers Club of SA Inc</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #124A6E 100%);
+    padding: 76px 32px 96px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-inner { max-width: 640px; position: relative; z-index: 2; }
+  .hero .label { color: var(--gold); margin-bottom: 16px; display: block; }
+  .hero h1 { font-weight: 700; font-size: 52px; line-height: 1.08; color: var(--cream); letter-spacing: -0.01em; }
+  .hero h1 em { font-style: italic; font-weight: 400; color: var(--gold); }
+  .hero p.sub { margin-top: 22px; font-size: 18px; color: #CFE3EC; max-width: 460px; }
+  .hero-ctas { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .route-deco { position: absolute; right: -30px; top: 30px; width: 400px; height: 400px; opacity: 0.95; z-index: 1; }
+
+  .trail-wrap { max-width: 1060px; margin: 0 auto; position: relative; }
+  .trail-line {
+    position: absolute; top: 46px; left: 46px; right: 46px; height: 3px;
+    background-image: linear-gradient(to right, var(--coral) 60%, transparent 0%);
+    background-size: 16px 3px; background-repeat: repeat-x;
+  }
+  .trail-stops { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; position: relative; }
+  .stop { display: flex; flex-direction: column; align-items: center; width: 120px; text-align: center; }
+  .stop-badge {
+    width: 88px; height: 88px; border-radius: 50%; background: var(--navy);
+    border: 3px solid var(--bg-bright); outline: 3px solid var(--navy);
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    color: var(--cream); margin-bottom: 14px; flex-shrink: 0;
+  }
+  .stop-badge.next { background: var(--coral); outline-color: var(--coral); box-shadow: 0 0 0 6px rgba(255,107,71,0.15); }
+  .stop-badge .month { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em; opacity: 0.9; }
+  .stop-badge .num { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; margin-top: 2px; }
+  .stop-name { font-weight: 700; font-size: 14px; }
+  .stop-tag { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+
+  .philosophy {
+    background: linear-gradient(120deg, var(--green) 0%, var(--green-deep) 100%);
+    padding: 60px 32px; display: flex; gap: 56px; align-items: center; justify-content: center; flex-wrap: wrap;
+  }
+  .philosophy blockquote { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 30px; color: white; max-width: 480px; line-height: 1.3; }
+  .stats { display: flex; gap: 36px; flex-wrap: wrap; }
+  .stat { text-align: center; }
+  .stat .n { font-family: 'Fraunces', serif; font-weight: 700; font-size: 38px; color: white; }
+  .stat .l { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #DFF5E4; margin-top: 4px; }
+
+  .photo-strip { display: grid; grid-template-columns: repeat(5, 1fr); height: 200px; }
+  .photo-block {
+    display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.75);
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-align: center; padding: 8px;
+    border-right: 2px solid var(--bg-bright);
+  }
+  .photo-block:nth-child(1) { background: var(--navy); }
+  .photo-block:nth-child(2) { background: var(--coral-deep); }
+  .photo-block:nth-child(3) { background: var(--navy-deep); }
+  .photo-block:nth-child(4) { background: var(--green-deep); }
+  .photo-block:nth-child(5) { background: #C4472A; border-right: none; }
+
+  .join-section { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%); padding: 84px 32px; text-align: center; }
+  .join-section .label { color: var(--gold); justify-content: center; display: flex; margin-bottom: 16px; }
+  .join-section h2 { color: var(--cream); font-size: 38px; font-weight: 700; max-width: 560px; margin: 0 auto; }
+  .join-section p { color: #CFE3EC; max-width: 480px; margin: 18px auto 30px; font-size: 16px; }
+  .cap-note { margin-top: 26px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #7FA0AE; }
+
+  @media (max-width: 900px) {
+    .hero h1 { font-size: 36px; }
+    .route-deco { display: none; }
+    .trail-line { display: none; }
+    .photo-strip { grid-template-columns: repeat(2, 1fr); height: auto; }
+    .photo-block { height: 130px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">
+    <div class="badge-placeholder">YOUR<br>LOGO</div>
+    <div>
+      <div class="club-name">Carefree Caravaneers</div>
+      <div class="est">EST. 1978 · SOUTH AUSTRALIA</div>
+    </div>
+  </div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="rallies.html">Rally Programme</a>
+    <a href="join.html">Join Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="#">Members Login</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <svg class="route-deco" viewBox="0 0 420 420" fill="none">
+    <path d="M60 340 Q 140 300 150 220 Q 160 140 260 120 Q 340 105 360 40" stroke="#3D7A96" stroke-width="2.5" stroke-dasharray="1 10" stroke-linecap="round"/>
+    <circle cx="60" cy="340" r="8" fill="#FFC93C"/>
+    <circle cx="150" cy="220" r="8" fill="#4FA8CC"/>
+    <circle cx="260" cy="120" r="8" fill="#4FA8CC"/>
+    <circle cx="360" cy="40" r="10" fill="#FF6B47"/>
+  </svg>
+  <div class="hero-inner">
+    <span class="label">Established 1978 · 10 rallies a year</span>
+    <h1>Do as much,<br>or as <em>little</em>,<br>as you like.</h1>
+    <p class="sub">A South Australian caravanning club for people who'd rather swap stories around a campfire than follow a strict itinerary. Happy hours, BBQs, and a fair bit of laughing at each other's parking.</p>
+    <div class="hero-ctas">
+      <a href="rallies.html" class="btn-primary">See this season's rallies</a>
+      <a href="join.html" class="btn-secondary">How to join</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-bright">
+  <div class="section-heading">
+    <span class="label">The season ahead</span>
+    <h2>Twelve stops, one carefree trail</h2>
+  </div>
+  <div class="trail-wrap">
+    <div class="trail-line"></div>
+    <div class="trail-stops">
+      <div class="stop">
+        <div class="stop-badge next"><span class="month">AUG</span><span class="num">01</span></div>
+        <div class="stop-name">Stony Creek</div>
+        <div class="stop-tag">next up</div>
+      </div>
+      <div class="stop">
+        <div class="stop-badge"><span class="month">SEP</span><span class="num">02</span></div>
+        <div class="stop-name">Barmera</div>
+        <div class="stop-tag">state rally</div>
+      </div>
+      <div class="stop">
+        <div class="stop-badge"><span class="month">NOV</span><span class="num">03</span></div>
+        <div class="stop-name">Hahndorf</div>
+        <div class="stop-tag">50km</div>
+      </div>
+      <div class="stop">
+        <div class="stop-badge"><span class="month">FEB</span><span class="num">04</span></div>
+        <div class="stop-name">Port Elliot</div>
+        <div class="stop-tag">coastal</div>
+      </div>
+      <div class="stop">
+        <div class="stop-badge"><span class="month">APR</span><span class="num">05</span></div>
+        <div class="stop-name">Waikerie</div>
+        <div class="stop-tag">riverland</div>
+      </div>
+      <div class="stop">
+        <div class="stop-badge"><span class="month">JUN</span><span class="num">06</span></div>
+        <div class="stop-name">Jamestown</div>
+        <div class="stop-tag">tag-along option</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy" style="padding:0;">
+  <div style="display:flex; gap:56px; align-items:center; justify-content:center; flex-wrap:wrap; padding:60px 32px;">
+    <blockquote>&ldquo;Casual or more formal friendships are formed as we swap stories.&rdquo;</blockquote>
+    <div class="stats">
+      <div class="stat"><div class="n">47</div><div class="l">years touring</div></div>
+      <div class="stat"><div class="n">30</div><div class="l">van cap</div></div>
+      <div class="stat"><div class="n">10</div><div class="l">rallies / year</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="photo-strip">
+  <div class="photo-block">photo — quorn group</div>
+  <div class="photo-block">photo — spear creek</div>
+  <div class="photo-block">photo — stoney creek</div>
+  <div class="photo-block">photo — mount barker</div>
+  <div class="photo-block">photo — c bay</div>
+</div>
+
+<section class="join-section">
+  <span class="label">New members welcome</span>
+  <h2>30 vans, one waiting list, and a fair bit of banter</h2>
+  <p>Membership is capped by our constitution — once we're full, a waiting list keeps things fair. Get in touch and we'll let you know where things stand.</p>
+  <a href="join.html" class="btn-primary">Request to join</a>
+  <div class="cap-note">Membership currently open · capped at 30 vans</div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Carefree Caravaneers</h4>
+      <p>Club of SA Inc, established 1978. Affiliated with ACCSA and NACC.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Rallies</h4>
+      <a href="rallies.html">This season's programme</a>
+      <a href="#">Rally reports and photos</a>
+      <a href="#">Past programmes</a>
+    </div>
+    <div class="footer-col">
+      <h4>Club</h4>
+      <a href="#">Newsletters</a>
+      <a href="#">Constitution</a>
+      <a href="#">Privacy policy</a>
+      <a href="contact.html">Contact us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Members</h4>
+      <a href="#">Login</a>
+      <a href="#">Forgotten password</a>
+      <a href="#">Facebook group</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Carefree Caravaneers Club of SA Inc</span>
+    <span>secretary@carefreecaravaneers.org.au</span>
+  </div>
+</footer>
+
+</body>
+</html>

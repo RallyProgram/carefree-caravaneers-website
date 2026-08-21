@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Carefree Caravaneers Club of SA Inc</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .contact-wrap { max-width: 700px; margin: 0 auto; display: grid; gap: 20px; }
+  .contact-card {
+    background: var(--cream); border: 2px solid var(--border-soft); border-radius: 10px;
+    padding: 22px 26px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+  }
+  .contact-card h3 { font-size: 17px; margin-bottom: 2px; }
+  .contact-card .role { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--coral-deep); }
+  .contact-card a.email { color: var(--navy); font-weight: 600; text-decoration: none; }
+  .form-note {
+    max-width: 700px; margin: 40px auto 0; background: var(--bg-bright); border-left: 4px solid var(--coral);
+    padding: 18px 24px; border-radius: 8px; font-size: 14.5px; color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">
+    <div class="badge-placeholder">YOUR<br>LOGO</div>
+    <div>
+      <div class="club-name">Carefree Caravaneers</div>
+      <div class="est">EST. 1978 · SOUTH AUSTRALIA</div>
+    </div>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="rallies.html">Rally Programme</a>
+    <a href="join.html">Join Us</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="#">Members Login</a>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <span class="label">We'd love to hear from you</span>
+  <h1>Contact Us</h1>
+  <p>Questions about joining, an upcoming rally, or anything else — get in touch with the committee.</p>
+</div>
+
+<section class="section-light">
+  <div class="contact-wrap">
+    <div class="contact-card">
+      <div>
+        <h3>General Enquiries</h3>
+        <div class="role">Secretary</div>
+      </div>
+      <a class="email" href="mailto:secretary@carefreecaravaneers.org.au">secretary@carefreecaravaneers.org.au</a>
+    </div>
+    <div class="contact-card">
+      <div>
+        <h3>Don Palmer</h3>
+        <div class="role">Committee</div>
+      </div>
+      <a class="email" href="contact-form.html">Send a message</a>
+    </div>
+    <div class="contact-card">
+      <div>
+        <h3>Roger Zeuner</h3>
+        <div class="role">Webmaster</div>
+      </div>
+      <a class="email" href="contact-form.html">Send a message</a>
+    </div>
+  </div>
+
+  <div class="form-note">
+    <strong>Note for site build:</strong> individual committee email addresses are normally protected from spam-bots on the live site rather than shown in plain text — worth setting up either a simple contact form or lightly obfuscated mailto links here before this goes live, rather than posting raw addresses.
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Carefree Caravaneers</h4>
+      <p>Club of SA Inc, established 1978. Affiliated with ACCSA and NACC.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Rallies</h4>
+      <a href="rallies.html">This season's programme</a>
+      <a href="#">Rally reports and photos</a>
+      <a href="#">Past programmes</a>
+    </div>
+    <div class="footer-col">
+      <h4>Club</h4>
+      <a href="#">Newsletters</a>
+      <a href="#">Constitution</a>
+      <a href="#">Privacy policy</a>
+      <a href="contact.html">Contact us</a>
+    </div>
+    <div class="footer-col">
+      <h4>Members</h4>
+      <a href="#">Login</a>
+      <a href="#">Forgotten password</a>
+      <a href="#">Facebook group</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Carefree Caravaneers Club of SA Inc</span>
+    <span>secretary@carefreecaravaneers.org.au</span>
+  </div>
+</footer>
+
+</body>
+</html>
